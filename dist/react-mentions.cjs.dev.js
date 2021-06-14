@@ -1295,15 +1295,15 @@ var MentionsInput = /*#__PURE__*/function (_React$Component) {
       var props = omit(_this.props, ['style', 'classNames', 'className'], // substyle props
       keys(propTypes));
       return _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, props), style('input')), {}, {
-        value: _this.getPlainText()
+        value: _this.getPlainText(),
+        onScroll: _this.updateHighlighterScroll
       }, !readOnly && !disabled && {
         onChange: _this.handleChange,
         onSelect: _this.handleSelect,
         onKeyDown: _this.handleKeyDown,
         onBlur: _this.handleBlur,
         onCompositionStart: _this.handleCompositionStart,
-        onCompositionEnd: _this.handleCompositionEnd,
-        onScroll: _this.updateHighlighterScroll
+        onCompositionEnd: _this.handleCompositionEnd
       }), _this.isOpened() && {
         role: 'combobox',
         'aria-controls': _this.uuidSuggestionsOverlay,

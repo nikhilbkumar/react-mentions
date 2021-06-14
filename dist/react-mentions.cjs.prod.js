@@ -912,15 +912,15 @@ var makeTriggerRegex = function(trigger) {
     }), _defineProperty(_assertThisInitialized(_this), "getInputProps", function() {
       var _this$props = _this.props, readOnly = _this$props.readOnly, disabled = _this$props.disabled, style = _this$props.style;
       return _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, omit(_this.props, [ "style", "classNames", "className" ], keys(propTypes))), style("input")), {}, {
-        value: _this.getPlainText()
+        value: _this.getPlainText(),
+        onScroll: _this.updateHighlighterScroll
       }, !readOnly && !disabled && {
         onChange: _this.handleChange,
         onSelect: _this.handleSelect,
         onKeyDown: _this.handleKeyDown,
         onBlur: _this.handleBlur,
         onCompositionStart: _this.handleCompositionStart,
-        onCompositionEnd: _this.handleCompositionEnd,
-        onScroll: _this.updateHighlighterScroll
+        onCompositionEnd: _this.handleCompositionEnd
       }), _this.isOpened() && {
         role: "combobox",
         "aria-controls": _this.uuidSuggestionsOverlay,
